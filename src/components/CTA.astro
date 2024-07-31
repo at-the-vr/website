@@ -1,0 +1,19 @@
+---
+interface Props {
+  url: string;
+  text?: string;
+}
+const { url = "/", text } = Astro.props;
+---
+
+<section>
+  <div class="mx-auto max-w-7xl border-x border-white/20">
+    <div class="group duration-200 hover:bg-primary">
+      <a
+        href={url}
+        class="hover:rounded-0 inline-flex w-full items-center justify-center rounded-full bg-primary px-4 py-6 text-center text-3xl font-medium duration-200 hover:text-black focus:ring-0 lg:py-12 lg:text-6xl"
+        >{text}</a
+      >
+    </div>
+  </div>
+</section>

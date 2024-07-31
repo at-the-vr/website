@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+type Props = {
+  /**
+   * The text to be copied
+   */
+  text: string;
+};
+
+const { text } = Astro.props;
+---
+
+<button
+  id="copy-btn"
+  class="duration-200 hover:text-white/45 active:translate-y-2"
+>
+  <Icon name="copy" />
+</button>
+
+<span id="copy-span" class="text-xl opacity-0 transition-opacity duration-500">
+  Copied...
+</span>
+
+<script is:inline define:vars={{ text }}>
+  let copyBtn = document.getElementById("copy-btn");
+  let spanEl = document.getElementById("copy-span");
+  copyBtn.addEventListener("click", () => {
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        spanEl.classList.remove("opacity-0");
+        spanEl.classList.add("opacity-100");
+
+        setTimeout(() => {
+          spanEl.classList.remove("opacity-100");
+          spanEl.classList.add("opacity-0");
+        }, 2000);
+      })
+      .catch((err) => {
+        spanEl.innerHTML = "Please click again!";
+        console.error(err.message);
+      });
+  });
+</script>

@@ -1,0 +1,48 @@
+---
+import { marqueeKeywords } from "@/constants";
+---
+
+<section class="border-y border-white/20">
+  <div class="relative flex w-full overflow-x-hidden bg-transparent py-2">
+    <div class="grid w-full justify-between">
+      <div
+        class="absolute inset-0 left-0 z-10 w-44 bg-gradient-to-r from-black via-transparent"
+      >
+      </div>
+      <div
+        class="absolute inset-0 left-0 z-10 ml-auto w-44 bg-gradient-to-l from-black via-transparent"
+      >
+      </div>
+    </div>
+    <div class="animate-marquee1 whitespace-nowrap">
+      {
+        marqueeKeywords.map((keyword) => (
+          <div class="inline-block px-4">
+            <p class="flex items-center gap-x-6 text-base">
+              {keyword}
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
+              </span>
+            </p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="absolute top-2 animate-marquee2 whitespace-nowrap">
+      {
+        marqueeKeywords.map((keyword) => (
+          <div class="inline-block px-4">
+            <p class="flex items-center gap-x-6 text-base">
+              {keyword}
+              <span class="relative flex h-2.5 w-2.5">
+                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
+              </span>
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

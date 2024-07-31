@@ -1,0 +1,22 @@
+---
+import BaseLayout from "@/components/BaseLayout.astro";
+import CTA from "@/components/CTA.astro";
+const title = "Page not found";
+const description = "Sorry, couldn't find the page you're looking for.";
+---
+
+<BaseLayout {title} {description}>
+  <section>
+    <div class="mx-auto max-w-7xl border-x border-white/20">
+      <div class="mx-auto">
+        <div class="gradient-grid mx-auto p-8 lg:pt-28">
+          <h1 class="text-2xl lg:text-3xl">404</h1>
+          <p class="mt-4 text-xl">
+            {description}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <CTA url="/" text="Home" />
+</BaseLayout>
