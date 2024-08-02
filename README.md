@@ -16,3 +16,8 @@ All commands are run from the root of the project, on a terminal:
 | `pnpm preview`      | Preview your build locally, before deploying       |
 | `pnpm astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `pnpm astro --help` | Get help using the Astro CLI                       |
+
+
+### Credits
+
+[Michael](https://github.com/michael-andreuzza) for the AstroMax Theme Template
