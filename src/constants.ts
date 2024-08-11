@@ -19,8 +19,8 @@ export const projectData: {
     icon: "brain",
   },
   {
-    href: "https://dumshid.vercel.app/",
-    title: "Dumshid",
+    href: "https://dushin.vercel.app/",
+    title: "Dushin",
     desc: "Projects and some clone's that I did",
     icon: "middlebox",
   },
