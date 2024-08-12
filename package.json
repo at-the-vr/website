@@ -1,14 +1,15 @@
 {
   "name": "website",
   "type": "module",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier . -w --cache"
+    "format": "prettier . -w --cache",
+    "format:ci": "prettier ./src/ -w"
   },
   "dependencies": {
     "@astrojs/check": "^0.8.3",
