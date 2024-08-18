@@ -11,6 +11,6 @@ export default defineConfig({
       ? "https://atharvatypes.vercel.app"
       : process.env.VERCEL_URL
         ? `https://${process.env.VERCEL_URL}/`
-        : "https://localhost:4321/",
+        : "http://localhost:4321/",
   integrations: [tailwind(), icon(), sitemap({})],
 });
