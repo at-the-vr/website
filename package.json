@@ -1,7 +1,7 @@
 {
 	"name": "website",
 	"type": "module",
-	"version": "0.6.3",
+	"version": "0.6.4",
 	"scripts": {
 		"dev": "astro dev",
 		"start": "astro dev",
@@ -9,8 +9,8 @@
 		"preview": "astro preview",
 		"astro": "astro",
 		"format": "biome check --write ./ && prettier -w \"**/*\" --ignore-unknown --cache",
-		"lint": "biome check .",
-		"lint:fix": "biome check --write .",
+		"lint": "biome lint .",
+		"lint:fix": "biome lint --write .",
 		"format:ci": "pnpm run biome:write && pnpm run prettier:write",
 		"biome:write": "biome check --write ./",
 		"prettier:write": "prettier -w ./"
