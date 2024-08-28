@@ -12,8 +12,8 @@
 		"lint": "biome check .",
 		"lint:fix": "biome check --write .",
 		"format:ci": "pnpm run biome:write && pnpm run prettier:write",
-    "biome:write": "biome check --write ./",
-    "prettier:write": "prettier -w ./"
+		"biome:write": "biome check --write ./",
+		"prettier:write": "prettier -w ./"
 	},
 	"dependencies": {
 		"@astrojs/check": "^0.8.3",
