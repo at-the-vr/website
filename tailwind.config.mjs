@@ -51,6 +51,9 @@ export default {
 							borderRadius: "0.250rem",
 							fontWeight: "400",
 						},
+						":not(pre) > a > code": {
+							transition: "color 0.2s ease-in-out",
+						},
 					},
 				},
 				invert: {
@@ -58,6 +61,12 @@ export default {
 						":not(pre) > code": {
 							backgroundColor: theme("colors.neutral.800"),
 							borderColor: theme("colors.zinc.700"),
+						},
+						":not(pre) > a > code": {
+							color: theme("colors.neutral.300"),
+						},
+						":not(pre) > a > code:hover": {
+							color: theme("colors.white"),
 						},
 					},
 				},
