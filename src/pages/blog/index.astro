@@ -1,0 +1,61 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import ArrowCard from "@/components/ArrowCard.astro";
+import BaseLayout from "@/components/BaseLayout.astro";
+
+const data = (await getCollection("blog"))
+  .filter((post) => !post.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+type Acc = {
+  [year: string]: CollectionEntry<"blog">[];
+};
+
+const posts = data.reduce((acc: Acc, post) => {
+  const year = post.data.date.getFullYear().toString();
+  if (!acc[year]) {
+    acc[year] = [];
+  }
+  acc[year].push(post);
+  return acc;
+}, {});
+
+const years = Object.keys(posts).sort(
+  (a, b) => Number.parseInt(b) - Number.parseInt(a),
+);
+---
+
+<BaseLayout
+  title="My Blog"
+  description="A collection of all blogposts that I enjoyed writing"
+>
+  <section>
+    <div class="mx-auto max-w-7xl border-x border-b border-white/20">
+      <div class="gradient-grid mx-auto p-8 lg:pt-28">
+        <h1 class="text-xl lg:text-3xl">What have i been typing!</h1>
+      </div>
+      <div class="mx-auto max-w-screen-sm p-8 px-3 font-body">
+        <div class="space-y-4">
+          {
+            years.map((year) => (
+              <section class="animate space-y-4">
+                <div class="font-display font-semibold text-black dark:text-white">
+                  {year}
+                </div>
+                <div>
+                  <ul class="flex flex-col gap-4">
+                    {posts[year].map((post) => (
+                      <li>
+                        <ArrowCard entry={post} />
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

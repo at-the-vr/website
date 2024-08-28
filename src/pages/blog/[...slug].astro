@@ -1,0 +1,51 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import BaseLayout from "@/components/BaseLayout.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import { readingTime } from "@/utils";
+
+export async function getStaticPaths() {
+  const posts = (await getCollection("blog"))
+    .filter((post) => !post.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const frontmatter = post.data;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <div class="mx-auto max-w-7xl border-x border-b border-white/20">
+    <div class="gradient-grid mx-auto p-8 lg:pt-28">
+      <div class="animate flex items-center gap-1.5">
+        <div class="font-base text-sm">
+          <FormattedDate date={frontmatter.date} />
+        </div>
+        &bull;
+        <div class="font-base text-sm">
+          {readingTime(post.body)}
+        </div>
+      </div>
+      <h1 class="text-xl lg:text-3xl">
+        {frontmatter.title}
+      </h1>
+    </div>
+    {
+      frontmatter.updatedDate && (
+        <article class="mx-auto mb-6 mt-4 max-w-md rounded-md border border-primary/90 bg-slate-900 px-4 py-2 text-base sm:max-w-3xl">
+          <span class="font-semibold">Last updated: </span>
+          <FormattedDate date={frontmatter.updatedDate} />
+        </article>
+      )
+    }
+    <article class="prose prose-invert mx-auto p-8 font-body text-base">
+      <Content />
+    </article>
+  </div>
+</BaseLayout>

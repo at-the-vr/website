@@ -1,28 +1,33 @@
 {
-  "name": "website",
-  "type": "module",
-  "version": "0.5.2",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "format": "prettier . -w --cache",
-    "format:ci": "prettier ./src/ -w"
-  },
-  "dependencies": {
-    "@astrojs/check": "^0.8.3",
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
-    "astro": "^4.12.3",
-    "astro-icon": "^1.1.0",
-    "tailwindcss": "^3.4.7",
-    "typescript": "^5.5.4"
-  },
-  "devDependencies": {
-    "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.5"
-  }
+	"name": "website",
+	"type": "module",
+	"version": "0.5.2",
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro check && astro build",
+		"preview": "astro preview",
+		"astro": "astro",
+		"format": "biome check --write ./ && prettier -w \"**/*\" --ignore-unknown --cache",
+		"lint": "biome check .",
+		"lint:fix": "biome check --write .",
+		"format:ci": "biome check --write ./ && prettier ./ -w"
+	},
+	"dependencies": {
+		"@astrojs/check": "^0.8.3",
+		"@astrojs/mdx": "^3.1.4",
+		"@astrojs/sitemap": "^3.1.6",
+		"@astrojs/tailwind": "^5.1.0",
+		"astro": "^4.12.3",
+		"astro-icon": "^1.1.0",
+		"tailwindcss": "^3.4.7",
+		"typescript": "^5.5.4"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.8.3",
+		"@tailwindcss/typography": "^0.5.14",
+		"prettier": "^3.3.3",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.6.5"
+	}
 }

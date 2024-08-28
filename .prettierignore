@@ -1,6 +1,15 @@
 .astro
-dist
-node_modules
+**/dist
+**/node_modules
 .github
 pnpm-lock.yaml
 .vscode
+
+*.js
+*.ts
+*.mjs
+*.cjs
+*.json
+*.jsonc
+*.mdx
+*.md
