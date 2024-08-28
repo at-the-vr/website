@@ -23,11 +23,13 @@ const posts = data.reduce((acc: Acc, post) => {
 const years = Object.keys(posts).sort(
   (a, b) => Number.parseInt(b) - Number.parseInt(a),
 );
+
+const title = "My Blog";
+const description =
+  "A collection of all blogposts that I enjoyed writing";
 ---
 
-<BaseLayout
-  title="My Blog"
-  description="A collection of all blogposts that I enjoyed writing"
+<BaseLayout {title} {description}
 >
   <section>
     <div class="mx-auto max-w-7xl border-x border-b border-white/20">
@@ -38,7 +40,7 @@ const years = Object.keys(posts).sort(
         <div class="space-y-4">
           {
             years.map((year) => (
-              <section class="animate space-y-4">
+              <section class="space-y-4">
                 <div class="font-display font-semibold text-black dark:text-white">
                   {year}
                 </div>

@@ -25,3 +25,23 @@ export const projectData: {
 		icon: "middlebox",
 	},
 ];
+
+export const OpenSourceData: {
+	href: string;
+	title: string;
+	desc: string;
+	icon: string;
+}[] = [
+	{
+		href: "https://docs.astro.build/en/getting-started/",
+		title: "Astro Docs",
+		desc: "Official documentation for Astro Framework",
+		icon: "astro",
+	},
+	{
+		href: "https://astro-tips.dev/",
+		title: "Astro Tips",
+		desc: "The place for content that goes beyond the official docs",
+		icon: "tip",
+	},
+];

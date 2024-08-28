@@ -12,14 +12,14 @@ const { href, title, desc, icon } = Astro.props;
 ---
 
 <div
-  class="group mx-auto flex w-full max-w-md flex-col justify-between gap-3 rounded-lg border-4 border-neutral-900 bg-gradient-to-t from-slate-950 to-zinc-900 p-4 outline outline-1 outline-zinc-700 ring-zinc-600 duration-200 focus-within:ring-2 hover:from-slate-900 hover:to-zinc-950 focus:outline-zinc-500"
+  class="group mx-auto flex w-full max-w-md flex-col gap-3 rounded-lg border-4 border-neutral-900 bg-gradient-to-t from-slate-950 to-zinc-900 p-4 outline outline-1 outline-zinc-700 ring-zinc-600 duration-200 focus-within:ring-2 hover:from-slate-900 hover:to-zinc-950"
 >
   <a href={href} class="focus-visible:outline-none" rel="noopener noreferrer">
     <p class="mb-3 flex w-full items-center justify-between text-xl">
       {title}
       <Icon
         name={icon}
-        class:list={"aspect-square rounded-md border-neutral-600 text-xl group-hover:text-purple-400"}
+        class="aspect-square rounded-md border-neutral-600 text-xl group-hover:text-purple-400"
       />
     </p>
     <p class="text-base opacity-80 transition-opacity group-hover:opacity-95">
