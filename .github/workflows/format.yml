@@ -5,11 +5,11 @@ on:
       - main
 jobs:
   format:
-    name: Prettier
+    name: Format
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18]
+        node-version: [20]
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -22,5 +22,12 @@ jobs:
           cache: "pnpm"
       - name: Install dependencies
         run: pnpm install
-      - name: Formatting with Prettier
+      - name: Formatting with Biome & Prettier
         run: pnpm format:ci
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: '[ci] format'
+          branch: ${{ github.head_ref }}
+          commit_user_name: at-the-vr
+          commit_user_email: atharvapise19@gmail.com
