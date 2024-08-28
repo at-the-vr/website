@@ -5,11 +5,7 @@ type Props = {
   ext?: boolean;
 };
 
-const { 
-  url = "/", 
-  text = "Click here", 
-  ext = true 
-} = Astro.props;
+const { url = "/", text = "Click here", ext = true } = Astro.props;
 
 const relAtt = ext ? "noopener noreferrer" : undefined;
 ---
