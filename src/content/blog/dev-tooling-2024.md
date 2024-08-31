@@ -27,7 +27,7 @@ Turns out this default configurations save a ton of time the moment I started tr
 ### Honorable Mentions
 
 - [`Lunaria`](https://lunaria.dev/): If I ever had a need to manage localizations for my documentation, then this is the tool that I will be using to help me with that task.
-- [`UnoCSS`](https://unocss.dev/): A wild atomic styling solution with with enough sprinkle on top to assist tailwindcss users like me.
+- [`UnoCSS`](https://unocss.dev/): A wild atomic styling solution with enough sprinkle on top to assist tailwindcss users like me.
 
 ### What about Testing
 
