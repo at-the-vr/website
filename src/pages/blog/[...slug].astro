@@ -38,13 +38,15 @@ const { Content } = await post.render();
     </div>
     {
       frontmatter.updatedDate && (
-        <article class="mx-auto mb-6 mt-4 max-w-md rounded-md border border-primary/90 bg-slate-900 px-4 py-2 text-base sm:max-w-3xl">
+        <article class="border-primary/90 mx-auto mt-4 mb-6 max-w-md rounded-md border bg-slate-900 px-4 py-2 text-base sm:max-w-3xl">
           <span class="font-semibold">Last updated: </span>
           <FormattedDate date={frontmatter.updatedDate} />
         </article>
       )
     }
-    <article class="prose prose-invert mx-auto p-8 font-body text-base">
+    <article
+      class="prose prose-invert font-body mx-auto p-8 text-base leading-8"
+    >
       <Content />
     </article>
   </div>

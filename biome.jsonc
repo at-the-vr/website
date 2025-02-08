@@ -10,7 +10,7 @@
 		}
 	},
 	"files": {
-		"ignore": [".astro/types.d.ts"]
+		"ignore": [".*.d.ts"]
 	},
 	"overrides": [
 		{

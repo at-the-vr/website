@@ -1,9 +1,10 @@
 import sitemap from "@astrojs/sitemap";
-import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 import { defineConfig } from "astro/config";
 
 import mdx from "@astrojs/mdx";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
@@ -13,5 +14,10 @@ export default defineConfig({
 			: process.env.VERCEL_URL
 				? `https://${process.env.VERCEL_URL}/`
 				: "https://localhost:4321/",
-	integrations: [tailwind(), icon(), sitemap({}), mdx()],
+
+	integrations: [icon(), sitemap({}), mdx()],
+
+	vite: {
+		plugins: [tailwindcss()],
+	},
 });
